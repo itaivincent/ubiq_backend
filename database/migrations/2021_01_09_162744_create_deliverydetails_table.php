@@ -15,6 +15,8 @@ class CreateDeliverydetailsTable extends Migration
     {
         Schema::create('deliverydetails', function (Blueprint $table) {
             $table->id();
+            $table->string('delivery_address')->nullable();             
+            $table->string('user_id')->nullable();  
             $table->timestamps();
         });
     }

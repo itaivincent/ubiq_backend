@@ -15,6 +15,7 @@ class CreateTrendingsTable extends Migration
     {
         Schema::create('trendings', function (Blueprint $table) {
             $table->id();
+            $table->string('product_id')->nullable();
             $table->timestamps();
         });
     }

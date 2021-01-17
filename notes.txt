@@ -1,0 +1,3 @@
+google app client ID:7246563973-46vp52ct6jvdemjud26m987ip2flgd66.apps.googleusercontent.com
+
+google app client secret:s0Wh-T7tptJIHUcxYJ0O1yZQ

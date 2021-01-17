@@ -40,6 +40,10 @@
                 </label>
             </div>
 
+            <a href="{{ url('auth/google') }}" style="margin-top: 20px;" class="btn btn-sm btn-block">
+            <img src="https://support.clever.com/hc/article_attachments/360054105332/google.png" style="width: 69%;text-align: left;padding-right: 12px;">
+            </a> 
+
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">

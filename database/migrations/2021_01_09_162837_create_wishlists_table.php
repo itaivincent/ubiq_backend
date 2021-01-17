@@ -15,6 +15,13 @@ class CreateWishlistsTable extends Migration
     {
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
+            $table->integer('product_id')->nullable();
+            $table->string('product_name')->nullable();
+            $table->string('colors_sizes')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->double('zwl_prices')->nullable();
+            $table->double('usd_prices')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
