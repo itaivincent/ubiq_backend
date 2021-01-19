@@ -33,3 +33,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/widget.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css/datatables.bootstrap4.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/buttons.datatables.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.bootstrap4.min.css') }}">

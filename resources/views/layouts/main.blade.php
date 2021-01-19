@@ -17,10 +17,10 @@
 
 @yield('content')
 @include('sweetalert::alert')
-@include('layouts.partials.footerscripts')
-</div>
-</div>
-</div>
 
+</div>
+</div>
+</div>
+@include('layouts.partials.footerscripts')
  </body>
 </html>
