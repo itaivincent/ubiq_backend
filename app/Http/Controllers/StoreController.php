@@ -60,11 +60,11 @@ class StoreController extends Controller
     
             if($store){
     
-                return redirect('stores/create')->with('toast_success', 'store created successfully!!');
+                return redirect('stores/create')->with('success', 'store created successfully!!');
     
             }
         
-            return redirect('stores/create')->with('toast_error', 'Failed to create store!!');
+            return redirect('stores/create')->with('error', 'Failed to create store!!');
         }
     }
 

@@ -70,7 +70,7 @@ class ProductController extends Controller
 
         if (!$request->hasFile('images')) {
 
-            return redirect('products/parameters')->with('toast_error', 'please upload an image');
+            return redirect('products/parameters')->with('info', 'please upload an image');
         }
         
         $file = $request->images;
@@ -89,11 +89,11 @@ class ProductController extends Controller
         
         if($category){
     
-            return redirect('products/parameters')->with('toast_success', 'store created successfully!!');
+            return redirect('products/parameters')->with('success', 'store created successfully!!');
 
         }
     
-        return redirect('products/parameters')->with('toast_error', 'Failed to create store!!');
+        return redirect('products/parameters')->with('error', 'Failed to create store!!');
 
     }
 
@@ -111,7 +111,7 @@ class ProductController extends Controller
 
         if (!$request->hasFile('images')) {
 
-            return redirect('products/parameters')->with('toast_error', 'please upload an image');
+            return redirect('products/parameters')->with('info', 'please upload an image');
         }
         
         $file = $request->images;
@@ -131,11 +131,11 @@ class ProductController extends Controller
         
         if($category){
     
-            return redirect('products/parameters')->with('toast_success', 'store created successfully!!');
+            return redirect('products/parameters')->with('success', 'store created successfully!!');
 
         }
     
-        return redirect('products/parameters')->with('toast_error', 'Failed to create store!!');
+        return redirect('products/parameters')->with('success', 'Failed to create store!!');
 
     }
 

@@ -48,7 +48,7 @@ class UserController extends Controller
        
         if($request->password != $request->confirm_password){
             
-            return redirect('users/create')->with('toast_error', 'Password and confirm password  fields dont match');
+            return redirect('users/create')->with('error', 'Password and confirm password  fields dont match');
         }
 
         $user = new User;
@@ -62,11 +62,11 @@ class UserController extends Controller
 
         if($user){
 
-            return redirect('users/create')->with('toast_success', 'User created successfully!!');
+            return redirect('users/create')->with('success', 'User created successfully!!');
 
         }
     
-        return redirect('users/create')->with('toast_error', 'Failed to create user!!');
+        return redirect('users/create')->with('error', 'Failed to create user!!');
     }
 
     }
