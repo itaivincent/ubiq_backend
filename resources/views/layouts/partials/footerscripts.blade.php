@@ -23,10 +23,26 @@
 <script src="{{ asset('js/datatables.responsive.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
 <script src="{{ asset('js/responsive.bootstrap4.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
 
+
+<script src="{{ asset('js/jquery.cookie.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script src="{{ asset('js/jquery.steps.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script src="{{ asset('js/jquery.validate.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+
+<script src="{{ asset('js/underscore-min.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script src="{{ asset('js/moment.min.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script type="ce2668daaac54a74e9f6cdff-text/javascript" src="{{ asset('js/validate.js') }}"></script>
+
+<script src="{{ asset('js/form-wizard.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script src="{{ asset('js/pcoded.min.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script src="{{ asset('js/vertical-layout.min.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script src="{{ asset('js/jquery.mcustomscrollbar.concat.min.js') }}" type="ce2668daaac54a74e9f6cdff-text/javascript"></script>
+<script type="ce2668daaac54a74e9f6cdff-text/javascript" src="{{ asset('js/script.js') }}"></script>
+
+
 <script src="{{ asset('js/data-table-custom.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
 <script src="{{ asset('js/pcoded.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
-<script src="{{ asset('js/vertical-layout.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
-<script src="{{ asset('js/jquery.mcustomscrollbar.concat.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
+<!-- <script src="{{ asset('js/vertical-layout.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script> -->
+<!-- <script src="{{ asset('js/jquery.mcustomscrollbar.concat.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script> -->
 <script type="7ab3cb0e204785e18dc50839-text/javascript" src="{{ asset('js/script.js') }}"></script>
 <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('js/modal.js') }}"></script>
 
@@ -40,6 +56,8 @@
 </script>
 <script src="{{ asset('js/rocket-loader.min.js') }}" data-cf-settings="7ab3cb0e204785e18dc50839-|49" defer=""></script>
 
-</script>
+<!-- Products page  -->
+<script src="{{ asset('js/rocket-loader.min.js') }}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
+<!--  -->
 
-<script src="{{ asset('js/rocket-loader.min.js') }}" data-cf-settings="2d8d78e876b340f9029c575b-|49" defer=""></script>
+</script>

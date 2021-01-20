@@ -19,9 +19,12 @@ class CreateProductsTable extends Migration
             $table->integer('store_id')->nullable();
             $table->string('added_by')->nullable();
             $table->string('category')->nullable();
+            $table->string('sub_category')->nullable();
             $table->integer('category_id')->nullable();
-            $table->string('image')->nullable();
+            $table->string('sub_category_id')->nullable();
             $table->string('description')->nullable();
+            $table->string('size')->nullable();
+            $table->string('color')->nullable();
             $table->integer('quantity_instock')->nullable();
             $table->string('promotional_information')->nullable();
             $table->double('zwl_price')->nullable();

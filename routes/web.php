@@ -53,6 +53,10 @@ Route::get('/stores/create', [StoreController::class, 'create'])->name('stores.c
 //Products
 Route::get('/products/parameters', [ProductController::class, 'parameters'])->name('product.parameters');
 Route::post('/products/parameters/store', [ProductController::class, 'parameters_store'])->name('parameters.store');
+Route::post('/products/subcategory', [ProductController::class, 'subcategory'])->name('subcategory.store');
+Route::get('/products/index', [ProductController::class, 'index'])->name('product.index');
+Route::get('products/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('/products/store', [ProductController::class, 'store'])->name('product.store');
 
 
 require __DIR__.'/auth.php';

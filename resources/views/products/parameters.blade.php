@@ -54,7 +54,7 @@
 <a data-modal="modal-8"  data-toggle="modal" href="#modal-8"> <h6 class="fas fa-exchange-alt text-c-red f-18"></h6></a></div>
 <div class="col"><i class="fas fa-exchange-alt text-c-red f-18"></i></div>
 <div class="col">
-<a href="#"> <h6 class="fas fa-exchange-alt text-c-red f-18"></h6></a></div>
+<a data-modal="submodal-8"  data-toggle="modal" href="#submodal-8"> <h6 class="fas fa-exchange-alt text-c-red f-18"></h6></a></div>
 </div>
 <h6 class="pt-badge bg-c-red">5</h6>
 </div>
@@ -126,19 +126,24 @@
 {{ csrf_field() }}
  <div class="form-group row">
 <div class="col-sm-12">
-<input type="text" name="category" class="form-control" placeholder="Category">
-</div>
-</div>
-<div class="form-group row">
-<div class="col-sm-12">
-<select name="store_id" class="form-control form-control-inverse">
-<option value="opt1">Select Store</option>
-@foreach ($stores as $store)
-<option value="{{$store->id}}">{{ $store->store_name}}</option>
-@endforeach
+<select name="name" class="form-control form-control-inverse">
+<option value="opt1">Select Type</option>
+<option value="Streetwear">Streetwear</option>
+<option value="Ethnic">Ethnic</option>
+<option value="Formal Office Wear">Formal Office Wear</option>
+<option value="Business Casual">Business Casual</option>
+<option value="Evening Black Tie">Evening Black Tie</option>
+<option value="Sports Wear">Sports Wear</option>
+<option value="Military style">Military style</option>
+<option value="Ladies Wear">Ladies Wear</option>
+<option value="Children' Wear">Children' Wear</option>
+<option value="Mens Wear">Mens Wear</option>
 </select>
 </div>
 </div>
+
+</br>
+
 <div class="form-group row">
 <div class="col-sm-12">
 <input type="file"  name="images" class="form-control">
@@ -155,7 +160,69 @@
 </div>
 <!--  -->
 
+
+
 </div>
+
+<!-- Modals -->
+<div class="modal fade" id="submodal-8" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Create Sub Category</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<form method="Post" action="{{ route('subcategory.store') }}" enctype="multipart/form-data">
+{{ csrf_field() }}
+ <div class="form-group row">
+<div class="col-sm-12">
+<select name="subcategory" class="form-control form-control-inverse">
+<option value="opt1">Select Sub Category</option>
+<option value="Streetwear">Streetwear</option>
+<option value="Ethnic">Ethnic</option>
+<option value="Formal Office Wear">Formal Office Wear</option>
+<option value="Business Casual">Business Casual</option>
+<option value="Evening Black Tie">Evening Black Tie</option>
+<option value="Sports Wear">Sports Wear</option>
+<option value="Military style">Military style</option>
+<option value="Ladies Wear">Ladies Wear</option>
+<option value="Children' Wear">Children' Wear</option>
+<option value="Mens Wear">Mens Wear</option>
+</select>
+</div>
+</div>
+
+</br>
+
+<div class="form-group row">
+<div class="col-sm-12">
+<select name="category" class="form-control form-control-inverse">
+<option value="opt1">Select  Category</option>
+@foreach($categories as $category)
+<option value="{{$category->id}}">{{$category->category}}</option>
+@endforeach
+</select>
+</div>
+</div>
+
+<div class="form-group row">
+<div class="col-sm-12">
+<input type="file"  name="images" class="form-control">
+</div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="btn btn-default waves-effect " data-dismiss="modal">Close</button>
+<button type="submit"  class="btn btn-primary waves-effect waves-light ">Save changes</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!--  -->
 
 </div>
 </div>

@@ -142,17 +142,17 @@
 <ul class="pcoded-submenu">
 
 <li class=" ">
-<a href="color.html" class="waves-effect waves-dark">
+<a href="/products/index" class="waves-effect waves-dark">
 <span class="pcoded-mtext">All Products</span>
 </a>
 </li>
 <li class=" ">
-<a href="label-badge.html" class="waves-effect waves-dark">
+<a href="/products/create" class="waves-effect waves-dark">
 <span class="pcoded-mtext">Create Product</span>
 </a>
 </li>
 <li class=" ">
-<a href="products/parameters" class="waves-effect waves-dark">
+<a href="/products/parameters" class="waves-effect waves-dark">
 <span class="pcoded-mtext">Parameters</span>
 </a>
 </li>

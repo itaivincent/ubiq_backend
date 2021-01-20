@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
 use Exception;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -40,15 +42,24 @@ class GoogleController extends Controller
                 Auth::login($finduser);
 
                 return redirect()->intended('dashboard');
+                
             }else {
 
-               // Auth::login($finduser);
+        
+                Auth::login($user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make('password'),
+                ]));
+        
+                event(new Registered($user));
 
-                return redirect()->intended('/login'); 
+                return redirect()->intended('dashboard');
             }
 
         } catch (\Throwable $th) {
-            dd($th->getMessage()); 
+
+            return redirect()->intended('/login'); 
         }
     }
 
