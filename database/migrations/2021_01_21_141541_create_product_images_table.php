@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubCategoriesTable extends Migration
+class CreateProductImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,17 @@ class CreateSubCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_categories', function (Blueprint $table) {
+        Schema::create('product_images', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->nullable();
-            $table->string('sub_category')->nullable();           
-            $table->string('category_images')->nullable();
+            $table->unsignedBigInteger('product_id')->unsigned();
+            $table->integer('store_id')->nullable();
+            $table->string('file_name')->nullable();
             $table->string('file_path')->nullable();
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
+
+           
         });
     }
 
@@ -30,6 +34,7 @@ class CreateSubCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_categories');
+        Schema::dropIfExists('product_images');
+        
     }
 }

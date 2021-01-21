@@ -17,4 +17,9 @@ class Category extends Model
         'file_path',
         
     ];
+
+    public function sub_categories()
+    {
+        return $this->hasMany('App\Models\SubCategory');
+    }
 }

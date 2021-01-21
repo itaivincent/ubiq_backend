@@ -9,7 +9,6 @@ class ProductImage extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
 
         'product_id',
@@ -18,4 +17,8 @@ class ProductImage extends Model
         'file_path',
         
     ];
+
+    public function Product(){
+    	return $this->belongsTo('App\Models\Product');
+    }
 }

@@ -12,7 +12,7 @@
 <span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>
 </div>
 <div class="card-block">
-<form  method="post" action="{{ route('stores.store')}}" >
+<form  method="post" action="{{ route('stores.store')}}" enctype="multipart/form-data">
 {{ csrf_field() }}
 <div class="form-group row">
 
@@ -57,15 +57,28 @@
 <input type="text"  name="email" class="form-control form-control-normal" placeholder="store email">
 </div>
 
-<label class="col-sm-2 col-form-label">Store Address</label>
+<label class="col-sm-2 col-form-label">Cover Image</label>
 <div class="col-sm-4">
+<input type="file"  name="images" class="form-control">
+</div>
+
+</div>
+
+<div class="form-group row">
+
+
+<label class="col-sm-2 col-form-label">Store Address</label>
+<div class="col-sm-10">
 <textarea rows="5" cols="5" class="form-control" name="address" placeholder="Address"></textarea>
 </div>
 
 </div>
 
+
+<div style="margin-left:806px;">
 <button type="submit" class="btn waves-effect waves-light btn-primary btn-outline-primary"><i class="icofont icofont-user-alt-3"></i>Create Store</button>
 <button class="btn waves-effect waves-light btn-inverse btn-outline-inverse"><i class="icofont icofont-exchange"></i>Reset</button>
+</div>
 </div>
 </form>
 </div>

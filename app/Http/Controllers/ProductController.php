@@ -186,8 +186,6 @@ class ProductController extends Controller
         $product->usd_price = $request->usd_price;
         $product->save();
 
-        $files = [];
-        $paths = [];
 
         foreach($request->images as $file){
          

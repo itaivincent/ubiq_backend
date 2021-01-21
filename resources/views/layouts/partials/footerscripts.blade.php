@@ -45,6 +45,7 @@
 <!-- <script src="{{ asset('js/jquery.mcustomscrollbar.concat.min.js') }}" type="7ab3cb0e204785e18dc50839-text/javascript"></script> -->
 <script type="7ab3cb0e204785e18dc50839-text/javascript" src="{{ asset('js/script.js') }}"></script>
 <script type="d28fd8086f5eb18f81d8672a-text/javascript" src="{{ asset('js/modal.js') }}"></script>
+<script src="{{ asset('js/dropzone-amd-module.min.js') }}" type="ad6a379b5a73756c7bd7b3cd-text/javascript"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="7ab3cb0e204785e18dc50839-text/javascript"></script>
 <script type="7ab3cb0e204785e18dc50839-text/javascript">
@@ -54,10 +55,12 @@
 
   gtag('config', 'UA-23581568-13');
 </script>
-<script src="{{ asset('js/rocket-loader.min.js') }}" data-cf-settings="7ab3cb0e204785e18dc50839-|49" defer=""></script>
 
+
+<script src="{{ asset('js/rocket-loader.min.js') }}" data-cf-settings="7ab3cb0e204785e18dc50839-|49" defer=""></script>
 <!-- Products page  -->
 <script src="{{ asset('js/rocket-loader.min.js') }}" data-cf-settings="ce2668daaac54a74e9f6cdff-|49" defer=""></script>
 <!--  -->
+
 
 </script>

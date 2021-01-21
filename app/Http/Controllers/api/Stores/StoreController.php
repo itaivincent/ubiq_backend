@@ -1,14 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api\Stores;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Store;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Product;
+use App\Models\ProductImage;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\CategoryResource;
+use App\Http\Resources\StoreResource;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use DB;
+use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
@@ -19,10 +26,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        
-        $stores = Store::all();
-
-        return view('stores.index' , compact('stores'));
+        return StoreResource::collection(Store::get(), 200);
     }
 
     /**
@@ -32,9 +36,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        $sellers = User::all();
-      // dd($sellers);
-        return view('stores.create' , compact('sellers'));
+        //
     }
 
     /**
@@ -45,35 +47,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::check()){
-
-            $file = $request->images;
-            $file_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-            // save to public/products as the new $filename
-             $path = $file->storeAs('public/stores', $file_name);
-       
-    
-            $store = new Store;
-            $store->store_name = $request->store_name;
-            $store->store_email = $request->email;
-            $store->store_owner = $request->store_owner;
-            $store->store_phone_number = $request->phone_number;
-            $store->promo_description = $request->promo;
-            $store->store_address = $request->address;
-            $store->file_name = $file_name;
-            $store->file_path = $path;
-            $save = $store->save();
-
-            
-    
-            if($save){
-    
-                return redirect('stores/create')->with('success', 'store created successfully!!');
-    
-            }
-        
-            return redirect('stores/create')->with('error', 'Failed to create store!!');
-        }
+        //
     }
 
     /**

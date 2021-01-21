@@ -30,6 +30,9 @@ class CreateProductsTable extends Migration
             $table->double('zwl_price')->nullable();
             $table->double('usd_price')->nullable();
             $table->timestamps();
+
+
+            
         });
     }
 
@@ -41,5 +44,6 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
+        Schema::dropIfExists('product_images');
     }
 }

@@ -1,13 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\api\Auth;
+namespace App\Http\Controllers\api\Products;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Store;
+use App\Models\Product;
+use App\Models\ProductImage;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\CategoryResource;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use DB;
 
-class LoginController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,35 +25,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function login(Request $request)
-    {
-       $login =  $request->validate([
-            'email' => 'required|string',
-            'password' => 'required|string'
-        ]);
-
-        if(!Auth::attempt($login)){
-
-            return response(['message' => 'Invalid login details...']);
-        }
-
-        $accessToken = Auth::user()->createToken('accessToken')->accessToken;
-
-        // $user = $request->user();
-        //   $firebase = User::where('id', $user->id)->update([
-        //       'api_token' => $accessToken,
-        //   ]);
-
-        return response(['api_token' => $accessToken]);
+        return ProductResource::collection(Product::get(), 200);
     }
 
     /**
@@ -52,9 +33,10 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function category()
     {
-        //
+        return CategoryResource::collection(Category::get(), 200);
+
     }
 
     /**
@@ -65,7 +47,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -76,7 +58,7 @@ class LoginController extends Controller
      */
     public function show($id)
     {
-        //
+        return ProductResource::collection(Product::where('id', $id)->get(), 200);
     }
 
     /**

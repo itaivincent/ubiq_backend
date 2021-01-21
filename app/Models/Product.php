@@ -27,4 +27,9 @@ class Product extends Model
         'usd_price'
         
     ];
+
+    public function product_images()
+    {
+        return $this->hasMany('App\Models\ProductImage');
+    }
 }

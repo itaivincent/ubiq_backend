@@ -23,7 +23,8 @@ class Store extends Model
         'store_phone_number',
         'store_email',
         'store_address',
-        'address',
+        'file_name',
+        'file_path',
         
     ];
 

@@ -34,6 +34,9 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/widget.css') }}">
 
+<link href="{{ asset('css/jquery.filer.css') }}" type="text/css" rel="stylesheet" />
+<link href="{{ asset('css/jquery.filer-dragdropbox-theme.css') }}" type="text/css" rel="stylesheet" />
+
 <link rel="stylesheet" type="text/css" href="{{ asset('css/icofont.css') }}">
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.steps.css') }}">

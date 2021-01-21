@@ -20,9 +20,14 @@ class CreateStoresTable extends Migration
             $table->string('promo_description')->nullable();
             $table->string('store_phone_number')->nullable();
             $table->string('store_email')->nullable();
-            $table->string('store_address')->nullable();           
-            $table->integer('user_id')->nullable();
+            $table->string('store_address')->nullable(); 
+            $table->string('file_name')->nullable();
+            $table->string('file_path')->nullable();           
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
+
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
