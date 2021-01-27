@@ -48,11 +48,18 @@ class StoreController extends Controller
         if(Auth::check()){
 
             $store = Store::latest()->first();
-            $store_id = $store->id+1;
+
+             if($store == null){ 
+
+                 $id = 0;
+               }else{
+
+                $id = $store->id;
+             }
 
      
             $file = $request->images;
-            $file_name = $store_id .'.'.'png';
+            $file_name = $id+1 .'.'.'png';
             // save to public/products as the new $filename
              $path = 'storage/stores/'. $file_name;
        
@@ -95,7 +102,7 @@ class StoreController extends Controller
 
             $id = 0;
         }else{
-            
+
             $id = $store->id;
         }
 
