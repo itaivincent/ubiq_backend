@@ -88,9 +88,18 @@ class StoreController extends Controller
 
         $folderPath = public_path('/storage/stores/');
        // dd($request->image);
-       $store = Store::latest()->first();
+        $store = Store::latest()->first();
+    
+        
+        if($store == null){ 
 
-       $file_name = $store->id+1;
+            $id = 0;
+        }else{
+            
+            $id = $store->id;
+        }
+
+        $file_name = $id+1;
 
         $image_parts = explode(";base64,", $request->image);
 
