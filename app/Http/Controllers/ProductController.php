@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -191,7 +192,7 @@ class ProductController extends Controller
          
         $file_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
         // save to public/products as the new $filename
-         $path = $file->storeAs('public/products', $file_name);
+         $path = $file->storeAs(Storage::url('public/products'), $file_name);
         //   $files[] = $file_name;
         //   $paths[] = $path;
         $image = New ProductImage;

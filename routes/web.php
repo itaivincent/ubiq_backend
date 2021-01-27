@@ -36,6 +36,11 @@ Route::get('/users/index', function () {
     return view('users/index');
 })->middleware(['auth'])->name('users.index');
 
+
+Route::get('/stores/edit', function () {
+    return view('stores/edit');
+})->middleware(['auth'])->name('stores.edit');
+
 Route::get('/products/parameters', function () {
     return view('/products/parameters');
 })->middleware(['auth'])->name('products.parameters');
@@ -46,7 +51,8 @@ Route::get('/users/index', [UserController::class, 'index'])->name('users.index'
 Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
 
 //Stores
-Route::post('/stores/store', [StoreController::class, 'store'])->name('stores.store');
+Route::post('image-cropper/upload', [StoreController::class, 'upload'])->name('stores.imagestore');
+Route::post('stores/store', [StoreController::class, 'store'])->name('stores.store');
 Route::get('/stores/index', [StoreController::class, 'index'])->name('stores.index');
 Route::get('/stores/create', [StoreController::class, 'create'])->name('stores.create');
 

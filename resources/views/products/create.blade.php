@@ -146,7 +146,7 @@
 </fieldset>
 
 </section></br>
-<div style="margin-left:720px;">
+<div style="margin-left:700px;">
 <button type="submit" class="btn waves-effect waves-light btn-primary btn-outline-primary"><i class="icofont icofont-user-alt-3"></i>Create Product</button>
 <button class="btn waves-effect waves-light btn-inverse btn-outline-inverse"><i class="icofont icofont-exchange"></i>Reset</button>
 </div>

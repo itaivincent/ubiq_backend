@@ -47,10 +47,14 @@ class StoreController extends Controller
     {
         if(Auth::check()){
 
+            $store = Store::latest()->first();
+            $store_id = $store->id+1;
+
+     
             $file = $request->images;
-            $file_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+            $file_name = $store_id .'.'.'png';
             // save to public/products as the new $filename
-             $path = $file->storeAs('public/stores', $file_name);
+             $path = 'storage/stores/'. $file_name;
        
     
             $store = new Store;
@@ -74,6 +78,34 @@ class StoreController extends Controller
         
             return redirect('stores/create')->with('error', 'Failed to create store!!');
         }
+    }
+
+
+
+
+
+    public function upload(Request $request){
+
+        $folderPath = public_path('/storage/stores/');
+       // dd($request->image);
+       $store = Store::latest()->first();
+
+       $file_name = $store->id+1;
+
+        $image_parts = explode(";base64,", $request->image);
+
+        $image_type_aux = explode("image/", $image_parts[0]);
+
+        $image_type = $image_type_aux[1];
+
+        $image_base64 = base64_decode($image_parts[1]);
+
+        $file = $folderPath . $file_name . '.png';
+
+        file_put_contents($file, $image_base64);
+
+        return response()->json(['success'=>'success']);
+
     }
 
     /**
