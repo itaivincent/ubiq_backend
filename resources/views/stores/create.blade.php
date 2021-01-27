@@ -311,7 +311,8 @@ success: function(data){
 
 $modal.modal('hide');
 
-alert("success has been cropped successfully");
+
+swal("success deleting!", "Please try again", "success");
 
 }
 
