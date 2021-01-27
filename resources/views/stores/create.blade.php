@@ -142,7 +142,7 @@ max-width: 1000px !important;
 
 <div class="modal-header">
 
-<h5 class="modal-title" id="modalLabel">Laravel Crop and Resize Image Before Upload using jQuery Cropper JS - w3alert.com</h5>
+<h5 class="modal-title" id="modalLabel">Crop your image</h5>
 
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -311,7 +311,7 @@ success: function(data){
 
 $modal.modal('hide');
 
-alert("success upload image");
+alert("success has been cropped successfully");
 
 }
 
