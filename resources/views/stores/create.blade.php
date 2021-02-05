@@ -117,20 +117,11 @@ max-width: 1000px !important;
 </div>
 
 
-<div style="margin-left:780px;">
-<button type="submit" class="btn waves-effect waves-light btn-primary btn-outline-primary"><i class="icofont icofont-user-alt-3"></i>Create Store</button>
-<button class="btn waves-effect waves-light btn-inverse btn-outline-inverse"><i class="icofont icofont-exchange"></i>Reset</button>
-</div>
-</div>
-</form>
-</div>
-</div>
 
 
-</div>
 
-</div>
-</div>
+
+
 
 <!-- Jcropper -->
 
@@ -194,6 +185,30 @@ max-width: 1000px !important;
 </div>
 
 </div>
+
+
+
+
+
+
+
+
+<div style="margin-left:780px;">
+<button type="submit"  id="save" class="btn waves-effect waves-light btn-primary btn-outline-primary"><i class="icofont icofont-user-alt-3"></i>Create Store</button>
+<button class="btn waves-effect waves-light btn-inverse btn-outline-inverse"><i class="icofont icofont-exchange"></i>Reset</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+
 
 <script>
 
@@ -296,6 +311,15 @@ reader.onloadend = function() {
 
 var base64data = reader.result;
 
+$modal.modal('hide');
+
+$('#save').on('click', function() {
+
+      var store_name = $('#store_name').val();
+      var email = $('#email').val();
+      var phone = $('#phone_number').val();
+      var city = $('#store_owner').val();
+      var password = $('#promo').val();
 
 $.ajax({
 
@@ -305,16 +329,15 @@ dataType: "json",
 
 url: "/image-cropper/upload",
 
-data: {'_token': $('meta[name="_token"]').attr('content'), 'image': base64data},
+data: {'_token': $('meta[name="_token"]').attr('content'), 'image': base64data , 'store_name': store_name},
 
 success: function(data){
-
-$modal.modal('hide');
-
 
 swal("success deleting!", "Please try again", "success");
 
 }
+
+});
 
 });
 

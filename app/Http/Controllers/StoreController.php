@@ -59,7 +59,7 @@ class StoreController extends Controller
 
      
             $file = $request->images;
-            $file_name = $id+1 .'.'.'png';
+            $file_name = Auth::user()->id + $id+1 .'.'.'png';
             // save to public/products as the new $filename
              $path = 'storage/stores/'. $file_name;
        
@@ -106,7 +106,7 @@ class StoreController extends Controller
             $id = $store->id;
         }
 
-        $file_name = $id+1;
+        $file_name  = Auth::user()->id + $id+1;
 
         $image_parts = explode(";base64,", $request->image);
 
